@@ -285,3 +285,7 @@ select {
     top: 25px;
   }
 }
+
+.attribution{
+  text-align: center;
+}
