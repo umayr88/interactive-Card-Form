@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+:root {
+  --active-input-border: linear-gradient(
+    -45deg,
+    hsl(278, 68%, 11%) ,
+    hsl(249, 99%, 64%) ,
+    hsl(278, 68%, 11%) 
+  );
+  --input-errors: hsl(0, 100%, 66%);
+  --input-errors-transparent: hsl(0, 100%, 85%);
+
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+  /* hsl(249, 99%, 64%) */
+  /* hsl(278, 94%, 30%) */
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  font-family: inherit;
+}
+
+.container {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.card {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__img {
+  width: 100%;
+  max-width: 434px;
+  overflow: hidden;
+}
+
+.card--front {
+  position: absolute;
+  top: 120px;
+  left: 5%;
+  right: 12%;
+  color: white;
+  max-width: 400px;
+}
+
+.card--back {
+  position: absolute;
+  top: 15px;
+  right: 2%;
+  left: 20%;
+  max-width: 400px;
+  color: white;
+}
+
+.card__img {
+  max-width: 400px;
+}
+
+.thank-you {
+  display: none;
+}
+
+.gradient-bg {
+  height: 30vh;
+  width: 100%;
+  background: var(--active-input-border);
+}
+
+.cvc__code {
+  position: absolute;
+  bottom: 47.5%;
+  right: 50px;
+  font-size: 16px;
+  letter-spacing: 3px;
+}
+
+.card__authentication {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  scale: 0.9;
+}
+
+.card__number {
+  position: absolute;
+  bottom: 32%;
+  left: 20px;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+.card__holder {
+  position: absolute;
+  bottom: 12%;
+  left: 20px;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.card__exp-date {
+  position: absolute;
+  right: 20px;
+  bottom: 12%;
+  font-size: 16px;
+}
+
+.form {
+  margin-top: 100px;
+  width: 85%;
+  margin-inline: auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.form div {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form label {
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.form input::placeholder {
+  color: var(--dark-grayish-violet);
+}
+
+.form input {
+  padding: 12px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--light-grayish-violet);
+  width: 100%;
+  outline: none;
+}
+
+.form__next.form__next {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  color: white;
+  background-color: var(--very-dark-violet);
+  border: 0;
+  padding-block: 15px;
+  border-radius: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.red__input.red__input {
+  border: 1px solid var(--input-errors);
+}
+
+.error {
+  color: var(--input-errors);
+  display: none;
+}
+
+.thank-you {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.thank-you--text {
+  font-size: 36px;
+}
+
+.thank-you-p {
+  color: var(--dark-grayish-violet);
+  margin-bottom: 25px;
+}
+
+.btn--thank {
+  width: 50%;
+}
+
+@media (min-width: 450px) {
+  .form {
+    margin-top: 150px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .gradient-bg {
+    width: 50%;
+    height: 100vh;
+  }
+
+  .form {
+    width: 80%;
+    padding: 150px;
+    padding-right: 50px;
+    margin-top: 0px;
+    scale: 0.7;
+  }
+
+  .form div {
+    display: flex;
+    flex-direction: column;
+  }
+  .form__next.form__next {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .card--front {
+    top: 150px;
+    left: 15%;
+    right: 12%;
+    filter: drop-shadow(5px 5px 30px rgba(0, 0, 0, .3));
+  }
+
+  .card--back {
+    top: 50%;
+    right: 0%;
+    left: 20%;
+    filter: drop-shadow(5px 5px 30px rgba(0, 0, 0, .3));
+  }
+
+  .btn {
+    padding-block: 15;
+    font-size: 28px;
+  }
+
+  .thank-you {
+    margin-top: 0;
+  }
+
+  .form input {
+    font-size: 26px;
+    padding: 18px;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+  .card__number {
+  font-size: 26px;
+
+  }
+
+  .card__authentication {
+    left: 25px;
+    top: 25px;
+  }
+}
